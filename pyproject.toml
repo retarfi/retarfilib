@@ -1,3 +1,7 @@
+[project]
+name = "retarfilib"
+version = "0.1.0"
+
 [tool.poetry]
 name = "retarfilib"
 version = "0.1.0"
@@ -16,8 +20,8 @@ python = "^3.8"
 enable = true
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 profile = "black"

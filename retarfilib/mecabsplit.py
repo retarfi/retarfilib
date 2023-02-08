@@ -6,11 +6,13 @@ def get_tango(sen: str) -> list[str]:
     args_mecab: str
     if os.name == "nt":
         # Windows
-        args_mecab = "-u 'C:\\Program Files\\MeCab\\dic\\NEologd.dic'"
+        args_mecab = "-r 'C:\\Program Files\\MeCab\\etc\\mecabrc' -u 'C:\\Program Files\\MeCab\\dic\\NEologd.dic'"
     elif os.name == "posix":
         # Unix
-        args_mecab = "-r /etc/mecabrc -d {0}/local/lib/mecab/dic/mecab-ipadic-neologd".format(
-            os.environ["HOME"]
+        args_mecab = (
+            "-r /etc/mecabrc -d {0}/local/lib/mecab/dic/mecab-ipadic-neologd".format(
+                os.environ["HOME"]
+            )
         )
     else:
         raise NotImplementedError()
